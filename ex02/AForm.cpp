@@ -3,7 +3,7 @@
 AForm::AForm():name("name"), _grade_sign(75), _grade_excec(75), _signed(false){
 }
 
-AForm::AForm(AForm &t):name(t.name), _grade_sign(t._grade_sign) , _grade_excec(t._grade_excec), _signed(t._signed){ }
+AForm::AForm(const AForm &t):name(t.name), _grade_sign(t._grade_sign) , _grade_excec(t._grade_excec), _signed(t._signed){ }
 
 AForm &AForm::operator=(AForm &t)
 {

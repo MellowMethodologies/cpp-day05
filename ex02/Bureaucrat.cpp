@@ -25,7 +25,7 @@ const char*Bureaucrat::GradeTooLowException::what() const throw(){
 }
 
 
-void Bureaucrat::signForm(AForm t)
+void Bureaucrat::signForm(AForm &t)
 {
     if (t.getSigned())
         std::cout << this->name << " signed " << t.getName()<< std::endl;

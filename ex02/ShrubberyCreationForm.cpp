@@ -16,14 +16,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const target):AForm(tar
     Myfile.close();
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm()
-{
+ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
-}
-
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &){
-
-}
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &a):AForm(a), target(a.target){ }
 
 ShrubberyCreationForm const &ShrubberyCreationForm::operator=(ShrubberyCreationForm& t){
     (void)t;

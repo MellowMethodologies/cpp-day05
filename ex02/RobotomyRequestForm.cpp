@@ -10,7 +10,7 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target):AForm(target, 72, 4
 
 RobotomyRequestForm::~RobotomyRequestForm(){ }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &){ }
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &a):AForm(a), target(a.target){ }
 
 RobotomyRequestForm const &RobotomyRequestForm:: operator=(RobotomyRequestForm&){ 
         return *this;
