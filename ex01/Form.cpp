@@ -1,7 +1,6 @@
 #include "Form.hpp"
 
-Form::Form():name("name"), _grade_sign(75), _grade_excec(75), _signed(false){
-}
+Form::Form():name("name"), _grade_sign(75), _grade_excec(75), _signed(false){ }
 
 Form::Form(Form &t):name(t.name), _grade_sign(t._grade_sign) , _grade_excec(t._grade_excec), _signed(t._signed){ }
 

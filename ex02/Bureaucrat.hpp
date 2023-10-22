@@ -23,6 +23,7 @@ class Bureaucrat
         Bureaucrat& operator=( const Bureaucrat& rhs );
         Bureaucrat(const std::string& name, int grade);
         Bureaucrat(const Bureaucrat& src);
+        void formExecute(const Bureaucrat) const;
         ~Bureaucrat();
         void signForm(AForm&);
         class GradeTooHighException : public std::exception {

@@ -1,7 +1,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string const target):AForm(target, 145, 137),target(target)
+ShrubberyCreationForm::ShrubberyCreationForm( std::string const target ):AForm( target, 145, 137 ),target( target )
 {
     std::ofstream Myfile(target + "_shrubbery");
 
@@ -16,12 +16,9 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string const target):AForm(tar
     Myfile.close();
 }
 
-ShrubberyCreationForm::~ShrubberyCreationForm(){}
+ShrubberyCreationForm::~ShrubberyCreationForm( ){ }
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &a):AForm(a), target(a.target){ }
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &a ):AForm( a ), target( a.target ){ }
 
-ShrubberyCreationForm const &ShrubberyCreationForm::operator=(ShrubberyCreationForm& t){
-    (void)t;
-    return *this;
-}
+ShrubberyCreationForm const &ShrubberyCreationForm::operator=( ShrubberyCreationForm& ) { return *this; }
 
