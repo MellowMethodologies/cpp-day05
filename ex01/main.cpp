@@ -1,28 +1,26 @@
-#include "./Bureauctrat.hpp"
+#include "./Bureaucrat.hpp"
 
 int main()
 {
+    Form *AA = new Form ("test1", 25 ,5);
+    Bureaucrat A =  Bureaucrat ("test1", 5);
+    Form *BB = new Form ("test2", 15 ,15);
+    Bureaucrat B =  Bureaucrat ("test2", 10);
+    Form *CC = new Form ("test3", 10 ,15);
+    Bureaucrat C =  Bureaucrat ("test3", 20);
     try{
-        Form *AA = new Form ("test1", 25 ,5);
-        Bureaucrat *A = new Bureaucrat ("test1", 5);
-        Form *BB = new Form ("test2", 15 ,100);
-        Bureaucrat *B = new Bureaucrat ("test2", 1);
 
-        std::cout << *AA << std::endl;
-        std::cout <<  std::endl;
-        std::cout << *A << std::endl;
-        AA->beSigned();
-        A->signForm(*AA);
-        std::cout <<  std::endl;
-        std::cout << *BB << std::endl;
-        std::cout <<  std::endl;
-        std::cout << *B << std::endl;
-        BB->beSigned();
-        B->signForm(*BB);
-        std::cout <<  std::endl;
+        AA->beSigned(A);
+        BB->beSigned(B);
+        CC->beSigned(C);
+
     }
     catch(std::exception &s)
     {
         std::cout << s.what();
     }
+        std::cout << std::endl;
+        std::cout << *AA << std::endl;
+        std::cout << *BB << std::endl;
+        std::cout << *CC << std::endl;
 }

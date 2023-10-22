@@ -2,15 +2,14 @@
 #define PresidentialPardonForm_HPP
 
 #include "AForm.hpp"
-class AForm;
 
 class PresidentialPardonForm: public AForm
 {
     private:
         std::string target;
-        PresidentialPardonForm();
 
     public:
+        PresidentialPardonForm(){};
         PresidentialPardonForm(std::string target);
         ~PresidentialPardonForm();
         PresidentialPardonForm(PresidentialPardonForm const &);

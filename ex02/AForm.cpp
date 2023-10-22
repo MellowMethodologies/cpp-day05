@@ -12,12 +12,17 @@ AForm &AForm::operator=(AForm &t)
     return *this;
 }
 
-void AForm:: beSigned()
+void AForm:: beSigned(Bureaucrat &b)
 {
-    if (_grade_excec > _grade_sign)
+    if (b.getGrade() <= this->get_gradeS())
     {
-        throw(GradeTooLowException());
-        return ;
+        this->_signed = true;
+        b.signForm(*this);
+    }
+    else
+    {
+        b.signForm(*this);
+        throw (AForm::GradeTooLowException());
     }
     _signed = true;
 }

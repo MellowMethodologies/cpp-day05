@@ -6,7 +6,7 @@
 /*   By: sbadr <sbadr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 12:39:04 by ael-khni          #+#    #+#             */
-/*   Updated: 2023/09/26 15:42:25 by sbadr            ###   ########.fr       */
+/*   Updated: 2023/10/22 17:19:48 by sbadr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,53 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int main( void )
+#include <cstdlib>
+#include <iostream>
+using std::cout;
+using std::cerr;
+using std::endl;
+
+int main (int argc, char **argv)
 {
+	(void)argc;
+	(void)argv;
 
-    try {
+	Bureaucrat hermano("Hermano", 1);
 
-    } catch (std::exception &e) {
-        std::cout << e.what() << std::endl;
-    }
-    return EXIT_SUCCESS;
+	Bureaucrat ebil("Ebil", 150);
+	cout << endl;
+
+	cout << endl;
+	ShrubberyCreationForm scf("Ebil");
+	PresidentialPardonForm ppf("Ebil");
+	RobotomyRequestForm rrf("Ebil");
+	cout << endl;
+
+	ebil.signForm(scf);
+	scf.beSigned(ebil);
+	ebil.signForm(scf);
+
+	cout << endl;
+
+	ebil.signForm(ppf);
+	ppf.beSigned(ebil);
+	ebil.signForm(ppf);
+
+	cout << endl;
+
+	ebil.signForm(rrf);
+	rrf.beSigned(ebil);
+	ebil.signForm(rrf);
+
+	cout << endl;
+
+	try {
+		hermano.signForm(scf);
+	}
+	catch (std::exception& e) {
+		cerr << e.what() << endl;
+	}
+
+	cout << endl;
+	return EXIT_SUCCESS;
 }

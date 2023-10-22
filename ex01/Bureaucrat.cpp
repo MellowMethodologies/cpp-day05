@@ -1,4 +1,4 @@
-#include "./Bureauctrat.hpp"
+#include "./Bureaucrat.hpp"
 
 std::string Bureaucrat::getName() const{ return this->name;}
 

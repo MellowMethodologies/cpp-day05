@@ -6,7 +6,7 @@ int main()
         Bureaucrat A ("test1", 5);
         Bureaucrat B ("test2", 1);
         Bureaucrat C ("test3", 15);
-        Bureaucrat D ("test4", 5);
+        Bureaucrat D ("test4", 160);
 
         std::cout << A << std::endl;
         std::cout << B << std::endl;

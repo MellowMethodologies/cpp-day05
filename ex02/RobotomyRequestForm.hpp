@@ -2,14 +2,13 @@
 #define ROBOTOMYREQUESTFORM_HPP
 
 #include "AForm.hpp"
-class AForm;
 
 class RobotomyRequestForm: public AForm
 {
     private:
         std::string target;
-        RobotomyRequestForm();
     public:
+        RobotomyRequestForm(){};
         RobotomyRequestForm(std::string target);
         ~RobotomyRequestForm();
         RobotomyRequestForm(RobotomyRequestForm const &);
