@@ -10,15 +10,15 @@ class AForm
 {
     private:
         const std::string name;
-        const int _grade_sign;
-        const int _grade_excec;
+        const int grade_sign;
+        const int grade_excec;
         bool _signed;
     
     public:
         AForm();
         AForm(const AForm &t);
         AForm &operator=(AForm &t);
-        AForm(std::string const &name, const int _grade_sign, const int _grade_excec);
+        AForm(std::string const &name, const int grade_sign, const int grade_excec);
         virtual ~AForm();
 
         std::string getName()const;

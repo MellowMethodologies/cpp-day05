@@ -6,7 +6,7 @@
 /*   By: sbadr <sbadr@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 12:39:04 by ael-khni          #+#    #+#             */
-/*   Updated: 2023/10/22 17:19:48 by sbadr            ###   ########.fr       */
+/*   Updated: 2023/10/24 15:52:29 by sbadr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,9 @@ using std::cout;
 using std::cerr;
 using std::endl;
 
-int main (int argc, char **argv)
+int main ()
 {
-	(void)argc;
-	(void)argv;
-
 	Bureaucrat hermano("Hermano", 1);
-
 	Bureaucrat ebil("Ebil", 150);
 	cout << endl;
 
@@ -36,28 +32,11 @@ int main (int argc, char **argv)
 	ShrubberyCreationForm scf("Ebil");
 	PresidentialPardonForm ppf("Ebil");
 	RobotomyRequestForm rrf("Ebil");
-	cout << endl;
-
-	ebil.signForm(scf);
-	scf.beSigned(ebil);
-	ebil.signForm(scf);
-
-	cout << endl;
-
-	ebil.signForm(ppf);
-	ppf.beSigned(ebil);
-	ebil.signForm(ppf);
-
-	cout << endl;
-
-	ebil.signForm(rrf);
-	rrf.beSigned(ebil);
-	ebil.signForm(rrf);
-
+	rrf.beSigned(hermano);
 	cout << endl;
 
 	try {
-		hermano.signForm(scf);
+		rrf.execute(hermano);
 	}
 	catch (std::exception& e) {
 		cerr << e.what() << endl;
