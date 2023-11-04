@@ -1,14 +1,10 @@
 #include "Intern.hpp"
 
-Intern::Intern() {
-}
+Intern::Intern() {}
 
-Intern::Intern(const Intern& other) {
-    *this = other;
-}
+Intern::Intern(const Intern& other) { *this = other; }
 
-Intern::~Intern() {
-}
+Intern::~Intern() {}
 
 Intern& Intern::operator=(const Intern& other) {
     if (this != &other) {
@@ -16,7 +12,7 @@ Intern& Intern::operator=(const Intern& other) {
     return *this;
 }
 
-AForm *makeForm(std::string name, std::string target)
+AForm *Intern::makeForm(std::string name, std::string target)
 {
     AForm *form = NULL;
     std::string formNames[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};

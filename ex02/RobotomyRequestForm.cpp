@@ -1,21 +1,18 @@
 #include "RobotomyRequestForm.hpp"
 #include <random>
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target):AForm(target, 72, 45), target(target)
-{}
+RobotomyRequestForm::RobotomyRequestForm(std::string target):Form(target, 72, 45), target(target) { }
 
-RobotomyRequestForm::~RobotomyRequestForm(){ }
+RobotomyRequestForm::~RobotomyRequestForm() { }
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &a):AForm(a), target(a.target){ }
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &a):Form(a), target(a.target) { }
 
-RobotomyRequestForm const &RobotomyRequestForm:: operator=(RobotomyRequestForm&){ 
-        return *this;
-}
+RobotomyRequestForm const &RobotomyRequestForm:: operator=(RobotomyRequestForm&){ return *this; }
 
 void RobotomyRequestForm::execute(Bureaucrat const & executor) const
 {
     if ( executor.getGrade() > this->get_gradeE())
-            throw AForm::GradeTooLowException();
+            throw Form::GradeTooLowException();
     else
     {
         srand(time(NULL));

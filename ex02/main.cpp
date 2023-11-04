@@ -1,47 +1,32 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: sbadr <sbadr@student.42.fr>                +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/01 12:39:04 by ael-khni          #+#    #+#             */
-/*   Updated: 2023/10/24 15:52:29 by sbadr            ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#include "AForm.hpp"
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
-
-#include <cstdlib>
-#include <iostream>
-using std::cout;
-using std::cerr;
-using std::endl;
-
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 int main ()
 {
-	Bureaucrat hermano("Hermano", 1);
-	Bureaucrat ebil("Ebil", 150);
-	cout << endl;
-
-	cout << endl;
-	ShrubberyCreationForm scf("Ebil");
-	PresidentialPardonForm ppf("Ebil");
-	RobotomyRequestForm rrf("Ebil");
-	rrf.beSigned(hermano);
-	cout << endl;
-
-	try {
-		rrf.execute(hermano);
-	}
-	catch (std::exception& e) {
-		cerr << e.what() << endl;
-	}
-
-	cout << endl;
-	return EXIT_SUCCESS;
+    try
+    {
+        //****** PresidentialPardon Form ******//
+        {
+            Bureaucrat test("Bureaucrate1", 1);
+            PresidentialPardonForm ff("target1");
+            ff.execute(test);
+        }
+        //****** PresidentialPardon Form ******//
+        {
+            Bureaucrat test("Bureaucrate2", 1);
+            RobotomyRequestForm aa("target2");
+            aa.execute(test);
+        }
+        //****** PresidentialPardon Form ******//
+        {
+            Bureaucrat test("Bureaucrate3", 1);
+            ShrubberyCreationForm bb("target3");
+            bb.execute(test);
+        }
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
 }

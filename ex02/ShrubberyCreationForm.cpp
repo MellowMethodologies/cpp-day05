@@ -1,19 +1,18 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm( std::string const target ):AForm( target, 145, 137 ),target( target )
-{}
+ShrubberyCreationForm::ShrubberyCreationForm( std::string const target ):Form( target, 145, 137 ),target( target ) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm( ){ }
 
-ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &a ):AForm( a ), target( a.target ){ }
+ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &a ):Form( a ), target( a.target ){ }
 
 ShrubberyCreationForm const &ShrubberyCreationForm::operator=( ShrubberyCreationForm& ) { return *this; }
 
 void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 {
     if ( executor.getGrade() > this->get_gradeE())
-            throw AForm::GradeTooLowException();
+            throw Form::GradeTooLowException();
     else
     {
         std::ofstream Myfile(target + "_shrubbery");

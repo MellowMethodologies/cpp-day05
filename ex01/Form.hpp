@@ -38,6 +38,15 @@ class Form
     
 };
 
+class exception : public std::exception
+{
+    private:
+        std::string _msg;
+    public:
+        exception(std::string msg);
+        virtual ~exception() throw();
+        virtual const char* what() const throw();
+};
 std::ostream&   operator<<( std::ostream& os, const Form& rhs );
 
 
